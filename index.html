@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hangi Tren?</title>
+	<meta name="description" content="Hangi Tren? ile Metro İstanbul numaralandırma şemasına göre M2 hattı tren ve vagon numaralarını bulun">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+	<script src="main.js"></script>
+	<style>
+		#trainnoinputdiv, #carnoinputdiv {
+			display: none;
+			flex-direction: column;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hangi Tren?</h1>
+	<p>Tren/vagon numarası ile M2 hattı araçları hakkında detaylı bilgiye ulaşın.</p>
+	<br>
+	<form>
+    	<input onclick="modeChange('train')" type="radio" checked name="tren" id="tren"/>
+        <label for="tren">Tren numarasından</label>
+		<br>
+        <input onclick="modeChange('car')" type="radio" name="tren" id="vagon"/>
+        <label for="vagon">Vagon numarasından</label>
+    </form>
+	<br>
+	<div id="trainnoinputdiv" style="display: flex;">
+		<input type="text" id="trainnoinput" placeholder="Tren Numarası (örn: 17)">
+		<button onclick="updateTrainNumber()">Ara</button>
+	</div>
+	<div id="carnoinputdiv">
+		<input type="text" id="carnoinput" placeholder="Vagon Numarası (örn: 1530)">
+		<small>Sondaki X veya Y harfi vagon başı-sonunu temsil etmektedir. Metin kutusuna eklemeyiniz.</small> <br>
+		<button onclick="updateCarNumber()">Ara</button>
+	</div>
+	<hr>
+	<div id="traininfo">
+		<h2>Bir tren/vagon numarası girin</h2>
+	</div>
+</body>
+</html>
